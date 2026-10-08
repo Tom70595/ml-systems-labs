@@ -1,0 +1,3 @@
+model,train_median_s,infer_median_ms,size_bytes,size_kb,peak_train_mb,peak_infer_mb,test_accuracy
+logistic_regression,0.150606,0.105538,1103,1.08,0.02,0.00,0.9474
+random_forest,0.143479,2.766611,290905,284.09,0.34,0.00,0.9357
