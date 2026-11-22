@@ -1,0 +1,27 @@
+seed: 42
+data:
+  name: FashionMNIST
+  root: ./data
+  batch_size: 128
+  num_workers: 0
+  mean: 0.2860
+  std: 0.3530
+  val_size: 5000
+model:
+  name: CNN
+  num_classes: 10
+training:
+  epochs: 5
+  lr: 0.001
+  optimizer: Adam          # Adam | SGD
+  momentum: 0.9            # used only if optimizer: SGD
+  scheduler: none          # none | StepLR | CosineAnnealingLR | ReduceLROnPlateau
+  step_size: 2
+  gamma: 0.5
+  grad_accum_steps: 1
+checkpoint:
+  dir: lab06/checkpoints
+  save_every: 1
+mlflow:
+  experiment: lab06
+  tracking_uri: file:./mlflow

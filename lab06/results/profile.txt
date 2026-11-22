@@ -1,0 +1,31 @@
+batches 50
+data_loading       1.706 s    40.7%
+forward            1.354 s    32.3%
+backward           1.028 s    24.5%
+optimizer_step     0.100 s     2.4%
+
+-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                                                   Name    Self CPU %      Self CPU   CPU total %     CPU total  CPU time avg    # of Calls  
+-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  
+enumerate(DataLoader)#_SingleProcessDataLoaderIter._...        28.20%        1.161s        41.38%        1.704s      34.081ms            50  
+                          aten::max_pool2d_with_indices        18.92%     779.117ms        18.92%     779.117ms       7.791ms           100  
+                             aten::convolution_backward        13.79%     567.673ms        13.84%     570.070ms       5.701ms           100  
+                               aten::mkldnn_convolution         9.62%     396.207ms         9.68%     398.459ms       3.985ms           100  
+                               aten::threshold_backward         5.02%     206.561ms         5.02%     206.561ms       1.377ms           150  
+                                        aten::clamp_min         2.23%      91.628ms         2.23%      91.628ms     610.853us           150  
+                                         aten::_to_copy         1.94%      79.956ms         3.18%     130.866ms       6.292us         20800  
+                 aten::max_pool2d_with_indices_backward         1.91%      78.660ms         3.30%     135.889ms       1.359ms           100  
+                                            aten::fill_         1.39%      57.267ms         1.39%      57.267ms     227.250us           252  
+                                            aten::copy_         1.20%      49.428ms         1.20%      49.428ms       1.467us         33700  
+                                               aten::eq         1.14%      46.925ms         2.03%      83.561ms      13.056us          6400  
+                                              aten::div         1.10%      45.405ms         1.96%      80.849ms      11.890us          6800  
+                                           aten::select         1.05%      43.094ms         1.09%      45.080ms       3.522us         12800  
+                               Optimizer.step#Adam.step         0.86%      35.360ms         2.34%      96.428ms       1.929ms            50  
+                                            aten::addmm         0.85%      35.170ms         0.90%      37.133ms     371.330us           100  
+                                              aten::any         0.85%      34.833ms         1.55%      63.970ms       9.995us          6400  
+                                               aten::mm         0.82%      33.761ms         0.82%      33.761ms     168.805us           200  
+                                               aten::to         0.82%      33.740ms         3.71%     152.584ms       3.274us         46608  
+                                          aten::permute         0.73%      30.120ms         0.74%      30.642ms       4.788us          6400  
+                                            aten::clone         0.60%      24.727ms         0.88%      36.409ms       5.689us          6400  
+-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  
+Self CPU time total: 4.118s
